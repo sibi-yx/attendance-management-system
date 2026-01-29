@@ -45,6 +45,9 @@ app.use((req, res) => {
     message: 'Route not found'
   });
 });
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
 
 // Error handler (must be last)
 app.use(errorHandler);
