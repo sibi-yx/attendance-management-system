@@ -108,7 +108,7 @@ const Login = () => {
           </button>
         </form>
 
-        <div className="login-footer">
+       <div className="login-footer">
           <div className="login-demo-box">
             <h4 className="login-demo-title">Demo Credentials</h4>
             <p className="login-demo-item">
