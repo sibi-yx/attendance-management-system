@@ -22,6 +22,15 @@ app.use(cors({
   credentials: true
 }));
 
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Attendance Management API is running 🚀'
+  });
+});
+
+
+
 // Mount routers
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/students', require('./routes/students'));
