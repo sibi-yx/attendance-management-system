@@ -3,6 +3,8 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/Errorhandler');
+const path = require('path');
+
 
 // Load env vars
 dotenv.config();
@@ -13,6 +15,7 @@ connectDB();
 const app = express();
 
 // Body parser
+app.use(express.static(path.join(__dirname, 'frontend/dist')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -56,6 +59,9 @@ app.use((req, res) => {
 });
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok' });
+});
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend/dist/index.html'));
 });
 
 // Error handler (must be last)
