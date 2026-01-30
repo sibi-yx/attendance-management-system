@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "build": "npm install --prefix frontend && npm run build --prefix frontend",
+    "build": "npm install --prefix attendance && npm run build --prefix attendance",
     "seed": "node seed.js"
   },
   "keywords": ["attendance", "mern", "education"],
